@@ -1,10 +1,29 @@
 import { useSelector } from 'react-redux';
 import './Main.scss';
 import EmployeesTable from '../../components/employees-table/EmployeesTable';
+import Select from '../../components/select/Select';
 import EmployeesFilter from '../../components/employees-filter/EmployeesFilter';
 
 const stateEmployees = (state) => state.employees;
 const stateRolesMap = (state) => state.rolesMap;
+
+const sortOptions = [
+  {
+    value: '',
+    label: 'По умолчанию',
+    isDefault: true,
+  },
+  {
+    value: 'name',
+    label: 'Имени',
+    isDefault: false,
+  },
+  {
+    value: 'birthday',
+    label: 'Дате рождения',
+    isDefault: false,
+  },
+];
 
 function Main() {
   const employees = useSelector(stateEmployees);
@@ -33,6 +52,10 @@ function Main() {
     },
   ];
 
+  const sortChangeHandler = (sortBy) => {
+    console.log('sortBy', sortBy);
+  };
+
   const rolesFilterChangeHandler = (filterBy) => {
     console.log('filterBy', filterBy);
   };
@@ -49,9 +72,9 @@ function Main() {
           isArchiveChanged={isArchiveChangeHandler}
           rolesOptions={rolesOptions}
         />
+        <Select selectChange={sortChangeHandler} label="Сортировать по" options={sortOptions} />
       </div>
-        <EmployeesTable employees={employees} rolesMap={rolesMap} />
-      </div>
+      <EmployeesTable employees={employees} rolesMap={rolesMap} />
     </main>
   );
 }
