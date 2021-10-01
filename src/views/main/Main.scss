@@ -1,5 +1,11 @@
-.main__table-wrapper {
+.main {
   margin: 0 auto;
   max-width: 800px;
   width: 96%;
+}
+
+.main__filters-toolbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
 }
