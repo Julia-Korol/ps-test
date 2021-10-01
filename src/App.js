@@ -1,8 +1,30 @@
 import './App.scss';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import Main from './views/main/Main';
+import { ACTIONS } from './store';
 
 function App() {
-  return <Router></Router>;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    fetch('/employees.json')
+      .then((response) => response.json())
+      .then((employees) => {
+        dispatch({ type: ACTIONS.SET_EMPLOYEES, payload: employees });
+      });
+  }, [dispatch]);
+
+  return (
+    <Router>
+      <Switch>
+        <Route path="/">
+          <Main />
+        </Route>
+      </Switch>
+    </Router>
+  );
 }
 
 export default App;

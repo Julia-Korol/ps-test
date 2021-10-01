@@ -1,0 +1,17 @@
+.employeess-table {
+  width: 100%;
+  line-height: 2em;
+  border-collapse: collapse;
+}
+
+.employeess-table__head {
+  text-align: left;
+}
+
+.employeess-table__row {
+  box-shadow: 0 0 1px 0 black;
+}
+
+.employeess-table__cell {
+  padding: 8px;
+}
