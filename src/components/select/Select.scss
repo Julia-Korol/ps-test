@@ -1,0 +1,14 @@
+.select__container {
+  display: flex;
+  align-items: center;
+}
+
+.select__label {
+  margin-right: 8px;
+}
+
+.select__select {
+  border: 1px solid rgb(58, 57, 57);
+  border-radius: 4px;
+  padding: 4px;
+}
