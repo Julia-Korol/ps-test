@@ -13,17 +13,25 @@ function EmployeesTable({ employees }) {
         </tr>
       </thead>
       <tbody>
-        {employees.map(({ id, name, role, phone }) => (
-          <tr key={id} className="employeess-table__row">
-            <td className="employeess-table__cell">
-              <Link to={`employees/${id}/edit`}>{name}</Link>
-            </td>
-            <td className="employeess-table__cell">{rolesMap[role]}</td>
-            <td className="employeess-table__cell">
-              <a href={`tel:${phone}`}>{phone}</a>
+        {employees.length ? (
+          employees.map(({ id, name, role, phone }) => (
+            <tr key={id} className="employeess-table__row">
+              <td className="employeess-table__cell">
+                <Link to={`employees/${id}/edit`}>{name}</Link>
+              </td>
+              <td className="employeess-table__cell">{rolesMap[role]}</td>
+              <td className="employeess-table__cell">
+                <a href={`tel:${phone}`}>{phone}</a>
+              </td>
+            </tr>
+          ))
+        ) : (
+          <tr>
+            <td className="employeess-table__empty" colSpan="3">
+              Нет данных
             </td>
           </tr>
-        ))}
+        )}
       </tbody>
     </table>
   );

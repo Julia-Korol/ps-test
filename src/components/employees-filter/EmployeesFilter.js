@@ -1,10 +1,29 @@
 import './EmployeesFilter.scss';
 import Select from '../select/Select';
+import { rolesMap } from './../../constans/index';
+
+const rolesOptions = [
+  {
+    value: '',
+    label: 'Не важно',
+  },
+  {
+    value: 'cook',
+    label: rolesMap.cook,
+  },
+  {
+    value: 'waiter',
+    label: rolesMap.waiter,
+  },
+  {
+    value: 'driver',
+    label: rolesMap.driver,
+  },
+];
 
 function EmployeesFilter({
   rolesFilterChange,
   isArchiveChanged,
-  rolesOptions,
   selectedOption,
   isArchiveChecked,
 }) {
