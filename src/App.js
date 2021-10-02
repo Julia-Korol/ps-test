@@ -19,9 +19,10 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/">
+        <Route path="/" exact>
           <Main />
         </Route>
+        <Route path="/employees/:id/edit">Editing</Route>
       </Switch>
     </Router>
   );

@@ -1,10 +1,5 @@
 const initialState = {
   employees: [],
-  rolesMap: {
-    driver: 'Водитель',
-    waiter: 'Официант',
-    cook: 'Повар',
-  },
 };
 
 export const ACTIONS = {

@@ -1,7 +1,13 @@
 import './EmployeesFilter.scss';
 import Select from '../select/Select';
 
-function EmployeesFilter({ rolesFilterChange, isArchiveChanged, rolesOptions }) {
+function EmployeesFilter({
+  rolesFilterChange,
+  isArchiveChanged,
+  rolesOptions,
+  selectedOption,
+  isArchiveChecked,
+}) {
   const onChangeHandler = (value) => {
     rolesFilterChange(value);
   };
@@ -13,13 +19,19 @@ function EmployeesFilter({ rolesFilterChange, isArchiveChanged, rolesOptions }) 
   return (
     <form onSubmit={(e) => e.preventDefault()} className="employees-filter__container">
       <div className="employees-filter__role">
-        <Select options={rolesOptions} selectChange={onChangeHandler} label="Должность" />
+        <Select
+          options={rolesOptions}
+          selectChange={onChangeHandler}
+          label="Должность"
+          selectedOption={selectedOption}
+        />
       </div>
       <label className="employees-filter__check-label">
         В архиве
         <input
           onChange={onChangeCheckbox}
           className="employees-filter__check"
+          checked={!!isArchiveChecked}
           type="checkbox"
         ></input>
       </label>

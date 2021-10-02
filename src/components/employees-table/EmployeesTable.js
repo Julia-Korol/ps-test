@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom';
+import { rolesMap } from '../../constans';
 import './EmployeesTable.scss';
 
-function EmployeesTable({ employees, rolesMap }) {
+function EmployeesTable({ employees }) {
   return (
     <table className="employeess-table">
       <thead className="employeess-table__head">
@@ -13,7 +15,9 @@ function EmployeesTable({ employees, rolesMap }) {
       <tbody>
         {employees.map(({ id, name, role, phone }) => (
           <tr key={id} className="employeess-table__row">
-            <td className="employeess-table__cell">{name}</td>
+            <td className="employeess-table__cell">
+              <Link to={`employees/${id}/edit`}>{name}</Link>
+            </td>
             <td className="employeess-table__cell">{rolesMap[role]}</td>
             <td className="employeess-table__cell">
               <a href={`tel:${phone}`}>{phone}</a>
