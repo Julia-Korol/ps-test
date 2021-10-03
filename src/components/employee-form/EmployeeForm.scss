@@ -1,0 +1,50 @@
+.employee-form {
+  text-align: center;
+}
+
+.employee-form__element {
+  margin-bottom: 24px;
+}
+
+.employee-form__label {
+  text-align: left;
+  margin-bottom: 8px;
+  display: block;
+  font-weight: 500;
+
+  &--checkbox {
+    display: flex;
+    justify-content: baseline;
+  }
+}
+
+.employee-form__input {
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  border: 1px solid rgb(75, 75, 75);
+  min-height: 24px;
+  box-sizing: border-box;
+  padding: 8px;
+  width: 100%;
+
+  &--checkbox {
+    width: 7%;
+    min-height: 20px;
+  }
+}
+
+.employee-form__button {
+  background-color: var(--base-color);
+  font-size: 14px;
+  color: var(--azure);
+  border-radius: 4px;
+  border: 1px solid var(--base-color);
+  padding: 8px 12px;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--hover-color);
+  }
+}

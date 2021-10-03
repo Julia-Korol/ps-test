@@ -1,11 +1,29 @@
 .main {
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 850px;
   width: 96%;
+  padding: 40px 0;
 }
 
 .main__filters-toolbar {
   display: flex;
   justify-content: space-between;
   margin-bottom: 24px;
+  padding: 16px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.05);
+  align-items: baseline;
+}
+
+.main__add-button {
+  text-decoration: none;
+  background-color: var(--base-color);
+  padding: 8px 8px 10px 8px;
+  color: var(--azure);
+  border-radius: 4px;
+  font-weight: 500;
+
+  &:hover {
+    background-color: var(--hover-color);
+  }
 }

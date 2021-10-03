@@ -5,3 +5,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+:root {
+  --base-color: rgb(31, 97, 172);
+  --hover-color: rgb(22, 74, 133);
+  --azure: rgb(240, 255, 255);
+}

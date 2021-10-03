@@ -1,0 +1,24 @@
+.header {
+  padding: 8px 0;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.4);
+}
+
+.header__nav {
+  max-width: 1200px;
+  width: 96%;
+}
+
+.header__button {
+  text-decoration: none;
+  color: var(--base-color);
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.header__list {
+  list-style: none;
+  margin: 0;
+}

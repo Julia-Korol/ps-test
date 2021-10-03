@@ -7,8 +7,7 @@ import EmployeesTable from '../../components/employees-table/EmployeesTable';
 import Select from '../../components/select/Select';
 import EmployeesFilter from '../../components/employees-filter/EmployeesFilter';
 import { getTime, parse } from 'date-fns/esm';
-
-const stateEmployees = (state) => state.employees;
+import { Link } from 'react-router-dom';
 
 const sortOptions = [
   {
@@ -62,7 +61,8 @@ const filterByArchive = (isArchive = false, employees) => {
 };
 
 function Main() {
-  const employees = useSelector(stateEmployees);
+  const employees = useSelector((state) => state.employees);
+  const rolesOptions = useSelector((state) => state.rolesOptions);
   const history = useHistory();
   const location = useLocation();
   const [urlParams, setUrlParams] = useState({});
@@ -115,6 +115,7 @@ function Main() {
         <EmployeesFilter
           rolesFilterChange={rolesFilterChangeHandler}
           isArchiveChanged={isArchiveChangeHandler}
+          rolesOptions={rolesOptions}
           selectedOption={urlParams?.filterBy}
           isArchiveChecked={urlParams?.isArchive}
         />
@@ -124,6 +125,9 @@ function Main() {
           options={sortOptions}
           selectedOption={urlParams?.sortBy}
         />
+        <Link className="main__add-button" to="employees/new">
+          Добавить сотрудника
+        </Link>
       </div>
       <EmployeesTable employees={filteredEmployees} />
     </main>
