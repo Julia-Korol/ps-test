@@ -1,7 +1,12 @@
+.employees-table__wrapper {
+  overflow-x: auto;
+}
+
 .employeess-table {
   width: 100%;
   line-height: 2em;
   border-collapse: collapse;
+  min-width: 464px;
 }
 
 .employeess-table__head {
